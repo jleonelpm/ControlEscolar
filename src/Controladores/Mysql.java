@@ -15,12 +15,12 @@ import Utilerias.Configuracion;
  */
 public class Mysql {
     
-   private String bd = "dbcontrol_cbta87";
+   private String bd = "******";
     //private String bd = "dbcontrol_beta";
   // private String usuario = "root";
    //private String password = "root";
-  private String usuario = "cbta_user";
-  private String password = "thechange6818";
+  private String usuario = "******";
+  private String password = "******";
    private String url;
    private String host;
    private String puerto;
