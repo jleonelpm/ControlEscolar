@@ -1,0 +1,8 @@
+nbproject/
+build/
+nbbuild/
+dist/
+nbdist/
+Fotos/
+lib/
+.nb-gradle/

@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="rptListasAsistencia" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="28"/>
+	<style name="titulo" hAlign="Center" vAlign="Top" fontName="Arial" fontSize="10" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<paragraph lineSpacing="Single"/>
+	</style>
+	<style name="docente" fontName="Arial" fontSize="9" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="semestre" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="materia" fontName="Arial" fontSize="8" isBold="true" isItalic="false" isUnderline="false" isStrikeThrough="false"/>
+	<style name="numero" hAlign="Center" vAlign="Bottom" isBlankWhenNull="false" fontName="Arial" fontSize="7" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<topPen lineWidth="0.75"/>
+			<leftPen lineWidth="0.75"/>
+			<bottomPen lineWidth="0.75"/>
+			<rightPen lineWidth="0.75"/>
+		</box>
+	</style>
+	<style name="nombre" fontName="Arial" fontSize="6" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<topPen lineWidth="0.75"/>
+			<bottomPen lineWidth="0.75"/>
+			<rightPen lineWidth="0.75"/>
+		</box>
+		<paragraph spacingBefore="5"/>
+	</style>
+	<style name="fechas" fontName="Arial" fontSize="9" isBold="false" isItalic="false" isUnderline="false" isStrikeThrough="false">
+		<box>
+			<pen lineWidth="1.0"/>
+			<topPen lineWidth="1.0"/>
+			<leftPen lineWidth="1.0"/>
+			<bottomPen lineWidth="1.0"/>
+			<rightPen lineWidth="1.0"/>
+		</box>
+	</style>
+	<parameter name="pdocente" class="java.lang.String"/>
+	<parameter name="psemestre" class="java.lang.String"/>
+	<parameter name="pgrupo" class="java.lang.String"/>
+	<parameter name="pespecialidad" class="java.lang.String"/>
+	<parameter name="pciclo" class="java.lang.String"/>
+	<parameter name="pmateria" class="java.lang.String"/>
+	<field name="fnumero" class="java.lang.Integer"/>
+	<field name="falumno" class="java.lang.String"/>
+	<variable name="variable1" class="java.lang.Integer" calculation="Count">
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="54" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="3" width="85" height="37"/>
+				<imageExpression><![CDATA["C:\\Users\\Last Develop\\Documents\\NetBeansProjects\\CBTA\\src\\Reportes\\sems.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="251" y="3" width="70" height="50"/>
+				<imageExpression><![CDATA["C:\\Users\\Last Develop\\Documents\\NetBeansProjects\\CBTA\\src\\Reportes\\cbta_lista.jpg"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="486" y="3" width="86" height="37"/>
+				<imageExpression><![CDATA["C:\\Users\\Last Develop\\Documents\\NetBeansProjects\\CBTA\\src\\Reportes\\dgta_lista.jpg"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement style="titulo" x="0" y="0" width="572" height="21"/>
+				<textElement textAlignment="Center">
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<text><![CDATA[CENTRO DE BACHILLERATO TECNOLOGICO AGROPECUARION No. 87]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="titulo" x="0" y="19" width="572" height="15"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<text><![CDATA[VALLADOLID, YUCATÁN]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement style="docente" x="228" y="0" width="58" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[DOCENTE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="semestre" x="228" y="20" width="54" height="20"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[SEMESTRE:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="semestre" x="306" y="20" width="34" height="20"/>
+				<textElement/>
+				<text><![CDATA[GRUPO:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="semestre" x="357" y="20" width="66" height="20"/>
+				<textElement/>
+				<text><![CDATA[ESPECIALIDAD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="semestre" x="228" y="40" width="36" height="20"/>
+				<textElement/>
+				<text><![CDATA[MES:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="semestre" x="308" y="40" width="90" height="20"/>
+				<textElement/>
+				<text><![CDATA[PERIODO ESCOLAR:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="materia" x="228" y="60" width="84" height="20"/>
+				<textElement/>
+				<text><![CDATA[MATERIA / SUBMOD:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="18" y="30" width="132" height="30"/>
+				<textElement>
+					<font fontName="Arial" size="16"/>
+				</textElement>
+				<text><![CDATA[ASISTENCIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="fechas" x="228" y="82" width="344" height="20"/>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="9" isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHAS DE ASISTENCIA]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="docente" x="286" y="0" width="228" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{pdocente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="semestre" x="282" y="20" width="24" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{psemestre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="semestre" x="340" y="20" width="18" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{pgrupo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="semestre" x="424" y="20" width="184" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{pespecialidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="semestre" x="398" y="40" width="184" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{pciclo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="materia" x="310" y="60" width="100" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$P{pmateria}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="12" splitType="Stretch">
+			<textField>
+				<reportElement style="numero" x="0" y="0" width="18" height="12"/>
+				<textElement>
+					<font fontName="Arial"/>
+					<paragraph spacingAfter="2"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="nombre" x="18" y="0" width="210" height="12"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{falumno}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="228" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="238" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="248" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="258" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="288" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="268" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="278" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="298" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="328" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="308" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="318" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="338" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="368" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="348" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="358" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="378" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="408" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="388" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="418" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="398" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="488" y="0" width="41" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="529" y="0" width="43" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="448" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="428" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="438" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="458" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="468" y="0" width="10" height="12"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="478" y="0" width="10" height="12"/>
+			</rectangle>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="34" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="178" height="13"/>
+				<textElement/>
+				<text><![CDATA[OBSERVACIONES:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="12" width="572" height="1"/>
+			</line>
+			<line>
+				<reportElement x="0" y="22" width="572" height="1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
